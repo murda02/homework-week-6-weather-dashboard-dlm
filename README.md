@@ -10,7 +10,7 @@ This is a weather app. The user enters a city name and is delivered the current 
 
 ## Screenshot
 
-![Weather Dashboard](./assets/images/weather-dashboard.png)
+![Weather Dashboard](./assets/img/weather-dashboard.png)
 
 ## Link to web app
 
