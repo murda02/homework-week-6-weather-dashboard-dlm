@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js">
+    </script>
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <header>Weather dashboard</header>
+    <main>
+        <aside id="searchBox">
+            <h1>Search for a city:</h1>
+            <input type="text" placeholder="Denver" id="city-search">
+            <br>
+            <button id="searchBtn">Search</button>
+            <div id="cityButtons"></div>
+        </aside>
+        <div class='weatherforecast'>
+            <section id="singleDay">
+                <h3 id="results"></h3> 
+                <h2 id="temp"></h2>
+                <h2 id="wind"></h2>
+                <h2 id="humidity"></h2>
+                <h2 id="uvi"></h2>
+            </section> 
+            <div id="forecast"></div>
+                <section class="fiveday">
+                    
+                    <div id="dayone">
+                        <h4 id='dayonedate' class='fivedaydate'></h4>
+                        <h4 id='dayoneicon' class='fivedayicon'></h4>
+                        <h4 id='dayonetemp' class='fivedaytemp'></h4>
+                        <h4 id='dayonewind' class='fivedaywind'></h4>
+                        <h4 id='dayonehumidity' class='fivedayhumidity'></h4>
+                    </div>
+
+                    <div id="daytwo">
+                        <h4 id='daytwodate' class='fivedaydate'></h4>
+                        <h4 id='daytwoicon' class='fivedayicon'></h4>
+                        <h4 id='daytwotemp' class='fivedaytemp'></h4>
+                        <h4 id='daytwowind' class='fivedaywind'></h4>
+                        <h4 id='daytwohumidity' class='fivedayhumidity'></h4>
+                    </div>
+
+                    <div id="daythree">
+                        <h4 id='daythreedate' class='fivedaydate'></h4>
+                        <h4 id='daythreeicon' class='fivedayicon'></h4>
+                        <h4 id='daythreetemp' class='fivedaytemp'></h4>
+                        <h4 id='daythreewind' class='fivedaywind'></h4>
+                        <h4 id='daythreehumidity' class='fivedayhumidity'></h4>
+                    </div>
+
+                    <div id="dayfour">
+                        <h4 id='dayfourdate' class='fivedaydate'></h4>
+                        <h4 id='dayfouricon' class='fivedayicon'></h4>
+                        <h4 id='dayfourtemp' class='fivedaytemp'></h4>
+                        <h4 id='dayfourwind' class='fivedaywind'></h4>
+                        <h4 id='dayfourhumidity' class='fivedayhumidity'></h4>
+                    </div>
+
+                    <div id="dayfive">
+                        <h4 id='dayfivedate' class='fivedaydate'></h4>
+                        <h4 id='dayfiveicon' class='fivedayicon'></h4>
+                        <h4 id='dayfivetemp' class='fivedaytemp'></h4>
+                        <h4 id='dayfivewind' class='fivedaywind'></h4>
+                        <h4 id='dayfivehumidity' class='fivedayhumidity'></h4>
+                    </div>
+                </section>
+        </div>
+        <div class="modal">
+            <h1>Error!</h1>
+            <p>Please enter a city name.</p>
+            <button id='close-btn'>Close</button>
+        </div>
+
+    <script src="./assets/js/script.js"></script>
+</main>
+</body>
+</html>

@@ -1,0 +1,277 @@
+/* These are color variable used through out the css file.   */
+:root {
+    --whitesmoke: whitesmoke;
+    --lit-sky-blue: lightskyblue;
+    --lit-blue: rgb(0, 102, 255);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    background-color: var(--whitesmoke);
+}
+
+header {
+    font-size: 2rem;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgb(17, 156, 248) 15%, rgba(9,9,121,1) 100%);
+    color: var(--whitesmoke);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 10px;
+}
+
+h1 {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+h2 {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+}
+
+h3 {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-transform:capitalize;
+}
+
+input {
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    padding: 5px;
+}
+
+main {
+    display: flex;
+    width: 100%;
+}
+
+button {
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 255px;
+    padding: 5px;
+    font-weight: bold;
+    background-color: var(--lit-blue);
+    color: var(--whitesmoke);
+    border-radius: 5px;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#results {
+    align-items: flex-end;
+}
+
+.weatherforecast {
+    display: flex;
+    width: 76%;
+    flex-direction: column;
+}
+
+#searchBox {
+    display: flex;
+    flex-direction: column;
+    width: 275px;
+}
+
+#uvi {
+    width: fit-content;
+}
+
+.iconclass {
+    width: 35px;
+}
+.modal {
+    display: none;
+    position: fixed;
+    background: lightskyblue;
+    padding: 10px;
+    width: 260px;
+    top: 100px;
+    left: calc(50% - 140px);
+    z-index: 1;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 255px;
+    padding: 5px;
+    font-weight: bold;
+    background-color: var(--lit-blue);
+    color: var(--whitesmoke);
+    border-radius: 5px;
+    border: none;
+}
+
+#close-btn {
+    width: fit-content;
+    background-color: rgb(17, 156, 248);
+    text-decoration: white;
+}
+
+p {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#forecast {
+    /* display: flex;
+    float: right; */
+    /* padding-inline: 200px; */
+    margin-top: 10px;
+    margin-left: 10px;
+    /* margin-right: 71vw; */
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-transform:capitalize;
+}
+
+button {
+    display: inline-block;
+}
+
+.fiveday {
+    display: flex;
+}
+
+#dayone {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-weight: bold; */
+    font-size: .7rem;
+    text-transform:capitalize;
+    align-items: flex-end;
+    padding: 10px;
+
+}
+
+#daytwo {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-weight: bold; */
+    font-size: .7rem;
+    text-transform:capitalize;
+    align-items: flex-end;
+    padding: 10px;
+
+}
+
+#daythree {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-weight: bold; */
+    font-size: .7rem;
+    text-transform:capitalize;
+    align-items: flex-end;
+    padding: 10px;
+
+}
+
+#dayfour {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-weight: bold; */
+    font-size: .7rem;
+    text-transform:capitalize;
+    align-items: flex-end;
+    padding: 10px;
+
+}
+
+#dayfive {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-weight: bold; */
+    font-size: .7rem;
+    text-transform:capitalize;
+    align-items: flex-end;
+    padding: 10px;
+
+}
+
+.fivedaydate {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform:capitalize;
+    align-items: flex-end;
+}
+
+.fivedayicon {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: flex-end;
+}
+
+.fivedaytemp {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .8rem;
+    text-transform:capitalize;
+    align-items: flex-end;
+}
+
+.fivedaywind {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .8rem;
+    text-transform:capitalize;
+    align-items: flex-end;
+}
+
+.fivedayhumidity {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .8rem;
+    text-transform:capitalize;
+    align-items: flex-end;
+}
