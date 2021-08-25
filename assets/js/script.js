@@ -1,17 +1,3 @@
-/*
-GIVEN a weather dashboard with form inputs
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
-WHEN I view the UV index
-THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
-*/
-// 
 let popupModal = document.querySelector('.modal');
 let closeBtn = document.querySelector('#close-btn');
 var body = document.getElementById('cityButtons');
@@ -19,6 +5,7 @@ var body = document.getElementById('cityButtons');
 var infoEl = document.createElement("div");
 // Create ordered list element
 var listEl = document.createElement("ol");
+listEl.id = "list"
 
 // function that takes everything from local storage and put it in the 'values' array
 function allStorage() {
@@ -30,27 +17,28 @@ function allStorage() {
   }
   return values;
 }
-console.log("allStorage(): ", allStorage());
 
-//for loop that cycles through the local storage values and creates a search history button for each value
-for (let i = 0; i < allStorage().length; i++) {
-  var citySearchBtn = document.createElement("button")
-  var li1 = document.createElement("li");
-
-  console.log("allStorage()[i]: ", allStorage()[i])
+  //function that cycles through the local storage values and creates a search history button for each value
+function getAll (){
+  listEl.innerHTML = ""
+  for (let i = 0; i < allStorage().length; i++) {
+    var citySearchBtn = document.createElement("button")
+    var li1 = document.createElement("li");
+    citySearchBtn.textContent = allStorage()[i]
+    citySearchBtn.setAttribute("style", "background:gray")
+    citySearchBtn.value = allStorage()[i]
+    body.appendChild(infoEl)
+    infoEl.appendChild(listEl)
+    listEl.appendChild(li1)
+    li1.appendChild(citySearchBtn)
   
-  citySearchBtn.textContent = allStorage()[i]
-  citySearchBtn.setAttribute("style", "background:gray")
-  citySearchBtn.value = allStorage()[i]
-  body.appendChild(infoEl)
-  infoEl.appendChild(listEl)
-  listEl.appendChild(li1)
-  li1.appendChild(citySearchBtn)
-
-  citySearchBtn.addEventListener('click', function(event) {
-    getWeather(event.target.value)
-  })
+    citySearchBtn.addEventListener('click', function(event) {
+      getWeather(event.target.value)
+    })
+  }
 }
+
+getAll()
 
 //eventlistener that takes in user input after they click the search button
 //if the search filed is empty they get a modal popup asking for a city
@@ -65,7 +53,7 @@ searchBtn.addEventListener('click', function() {
       popupModal.style.display='block';
     }
     getWeather(citySearch)
-    console.log("citySearch: ", citySearch);
+    getAll()
 })
 
 // this allows then user to close the popup modal
@@ -76,7 +64,6 @@ closeBtn.addEventListener('click', function() {
 //function that gets the current weather & the 5 day weather
 function getWeather(citySearch) {
   let api_url = `https://api.openweathermap.org/data/2.5/forecast?q=${citySearch}&exclude=hourly,daily&units=imperial&appid=f4eb3b5a80a206fa93f14a43ce8ac929`;
-    console.log();
 
     fetch(api_url)
     .then(function (response) {
@@ -89,9 +76,7 @@ function getWeather(citySearch) {
         let cityLat = cityLocation.city.coord.lat
         let cityLong = cityLocation.city.coord.lon
         let weatherIcon = cityLocation.list[0].weather[0].icon
-        console.log("weatherIcon: ", weatherIcon);
         let icon_url = `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`
-        console.log("icon_url: ", icon_url);
         let todaysDate = moment().format("(M/D/YYYY)");
         let day1 = moment().add(1, 'days').format("M/D/YYYY");
         let day2 = moment().add(2, 'days').format("M/D/YYYY");
@@ -116,6 +101,7 @@ function getWeather(citySearch) {
         document.getElementById("dayone").style.width = "fit-content"
         document.getElementById("dayone").style.backgroundColor = "rgb(45, 61, 72)"
         document.getElementById("dayone").style.color = "white"
+ 
 
         //day 2 of 5 day forecase
         daytwodate.innerHTML = `${day2}`
@@ -173,11 +159,7 @@ function getWeather(citySearch) {
         document.getElementById("dayfive").style.backgroundColor = "rgb(45, 61, 72)"
         document.getElementById("dayfive").style.color = "white"
 
-        console.log("cityLocation: ", cityLocation);
-
-
         let api_url2 = `https://api.openweathermap.org/data/2.5/onecall?lat=${cityLat}&lon=${cityLong}&exclude=hourly,minutely&units=imperial&appid=f4eb3b5a80a206fa93f14a43ce8ac929`
-        console.log("api_url2: ", api_url2);
 
         fetch(api_url2)
         .then(function (response) {
@@ -187,7 +169,6 @@ function getWeather(citySearch) {
           return response.json();
         })
         .then(function(weatherData) {
-          console.log("weatherData: ", weatherData);
           temp.innerHTML = `Temp: ${weatherData.current.temp} °F`
           wind.innerHTML = `Wind: ${weatherData.current.wind_speed} MPH`
           humidity.innerHTML = `Humidity: ${weatherData.current.humidity} %`
@@ -211,7 +192,6 @@ function getWeather(citySearch) {
           document.getElementById("singleDay").style.borderStyle = "solid"
           document.getElementById("singleDay").style.borderWidth = "1px"
           document.getElementById("singleDay").style.margin = "10px"
-          return console.log("yay");
         })
     })
 }

@@ -7,6 +7,7 @@ This is a weather app. The user enters a city name and is delivered the current 
 * Search history buttons for easy access to past searches
 * Weather conditions include temperature, wind speed, humidity, UV index and a weather icon
 * The UV index is color coded to indicate favorable (green) to server (purple) conditions
+* If the user doesn't fill the city search field in, a modal popups up telling them to enter a city
 
 ## Screenshot
 
