@@ -17,6 +17,10 @@ This is a weather app. The user enters a city name and is delivered the current 
 
 [Weather Dasboard link](https://murda02.github.io/homework-week-6-weather-dashboard-dlm/)
 
+## License
+
+[MIT](https://github.com/murda02/homework-week-6-weather-dashboard-dlm/blob/main/LICENSE)
+
 ## Author
 
     Dave Murphy
