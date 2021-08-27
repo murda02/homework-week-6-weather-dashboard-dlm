@@ -1,4 +1,4 @@
-# Homework week 6 | Weather Dashboard
+# Weather Dashboard
 This is a weather app. The user enters a city name and is delivered the current and a 5-day forecaset. After the user enters a search, a history button is added to the webpage so they can easily retrieve previous results.
 
 ## Features
